@@ -21,14 +21,14 @@ const signup = async (req, res) => {
 };
 const login = async (req, res) => {
     try {
-        console.log("request", req.body);
+       
         const { email, password } = req.body;
   
       if(!password){
         return res.status(400).json({ error: "Password is required" });
       }
       const validateUser = new User({ email });
-      console.log("validateUser", validateUser);
+     
         const user = await User.findOne({ email });
         
         console.log("User", user);
@@ -43,7 +43,7 @@ const login = async (req, res) => {
         }
                 
       } catch (err) {
-        console.log("error", err);
+       
         res.status(500).json({ error: "Could not update points" });
       }
   };
@@ -52,7 +52,7 @@ const login = async (req, res) => {
 
 const resetPassword = async (req, res) => {
     try {
-        console.log("request", req.body);
+        
         const { email, oldPassword, newPassword } = req.body;
   //Checking if all fields are in request body or not?
       if(!email){
@@ -67,10 +67,10 @@ const resetPassword = async (req, res) => {
       
       //getting User from database
       const validateUser = new User({ email });
-      console.log("validateUser", validateUser);
+      
         const user = await User.findOne({ email });
         
-        console.log("User", user);
+        
         //Check if user is not null
         if (!user) {
           return res.status(404).json({ error: "User not found" });

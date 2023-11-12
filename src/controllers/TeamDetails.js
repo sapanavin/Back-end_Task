@@ -3,9 +3,9 @@ const TeamDetails = require("../models/teamDetails");
 const getTeam = async (req, res) => {
   try {
     const teamId =req.param("teamId");
-    console.log("teamId  ", teamId);
-   // const teamDetails = await TeamDetails.findOne({ teamId });
-    const teamDetails = await TeamDetails.find();
+   
+   const teamDetails = await TeamDetails.findOne({ teamId });
+   //const teamDetails = await TeamDetails.find();
 
     res.json(teamDetails);
   } catch (err) {
