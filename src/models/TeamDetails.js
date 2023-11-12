@@ -1,5 +1,12 @@
 const mongoose = require("mongoose");
 
+const TeamMemberSchema = mongoose.Schema({
+  name: String,
+  age: Number,
+  designation: String,
+  image:String
+});
+
 const teamSchema = new mongoose.Schema({
     teamName: {
     type: String,
@@ -11,10 +18,12 @@ const teamSchema = new mongoose.Schema({
   },
   teamMembers:
     {
-      type: Array,
+      type: TeamMemberSchema,
       required: true,
     },
 });
+
+  
 
 const TeamDetails = mongoose.model("TeamDetails", teamSchema);
 

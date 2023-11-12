@@ -5,7 +5,7 @@ const getSchedule = async (req, res) => {
     const schedule = await Schedule.find();
     res.json(schedule);
   } catch (err) {
-    console.log(err);
+   
         res.status(500).json({ error: "Could not fetch Schedule" });
   }
 };
