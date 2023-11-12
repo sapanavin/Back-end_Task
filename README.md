@@ -156,38 +156,47 @@ For testing purposes, you can use ngrok to expose your local server to the inter
 
 
 
- ### LiveStream
+ ### Authentication APIs:
 
-#### Get Live Streams
 
-- **URL:** `/api/live-streams`
-- **Method:** GET
-- **Description:** Get a list of sports and their live streams.
+#### User Registration
 
-#### Add Live Stream
-
-- **URL:** `/api/live-streams`
+- **URL:** `/api/signup`
 - **Method:** POST
-- **Description:** Add a new live stream.
-- **Request Body:**
+- **Description:**  Register a new user.
+- - **Request Body:**
   ```json
   {
-    "sport": "Football",
-    "youtubeLink": "https://www.youtube.com/your-live-stream-url"
+    "name":"sapana",
+    "email": "abc@gmail.com",
+    "password": "sap123"
   }
   ```
 
-#### Update Live Stream
+#### User Login
 
-- **URL:** `/api/live-streams`
-- **Method:** PUT
-- **Description:** Update a live stream.
+- **URL:** `/api/login`
+- **Method:** POST
+- **Description:** Log in an existing user.
 - **Request Body:**
   ```json
   {
-    "liveStreamId": "6473t63791egr7193d3w",
-    "sport": "Football",
-    "youtubeLink": "https://www.youtube.com/updated-live-stream-url"
+    "email": "abc@gmail.com",
+    "password": "sap123"
+  }
+  ```
+
+#### Password Reset
+
+- **URL:** `/api/reset-password`
+- **Method:** POST
+- **Description:** Reset the password for a user..
+- **Request Body:**
+  ```json
+  {
+    "email": "abc@gmail.com",
+    "newPassword": "Football",
+    "oldPassword": "footbal123"
   }
   ```
 
