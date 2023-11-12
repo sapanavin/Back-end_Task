@@ -152,3 +152,42 @@ For testing purposes, you can use ngrok to expose your local server to the inter
     "youtubeLink": "https://www.youtube.com/updated-live-stream-url"
   }
   ```
+ -----------------------------------------------------------------------------------   Updated By Me   -----------------------------------------------------------------
+
+
+
+ ### LiveStream
+
+#### Get Live Streams
+
+- **URL:** `/api/live-streams`
+- **Method:** GET
+- **Description:** Get a list of sports and their live streams.
+
+#### Add Live Stream
+
+- **URL:** `/api/live-streams`
+- **Method:** POST
+- **Description:** Add a new live stream.
+- **Request Body:**
+  ```json
+  {
+    "sport": "Football",
+    "youtubeLink": "https://www.youtube.com/your-live-stream-url"
+  }
+  ```
+
+#### Update Live Stream
+
+- **URL:** `/api/live-streams`
+- **Method:** PUT
+- **Description:** Update a live stream.
+- **Request Body:**
+  ```json
+  {
+    "liveStreamId": "6473t63791egr7193d3w",
+    "sport": "Football",
+    "youtubeLink": "https://www.youtube.com/updated-live-stream-url"
+  }
+  ```
+
